@@ -52,3 +52,8 @@ method08(1,2,3,name="xiaomin")
 def method09(a,b,c,d):
     print(a,b,c,d)
 method09(1,3,c = method03(1,6),d = 9)
+
+#匿名函数 lambda 输入值:y
+print(lambda x:x**2)
+f=lambda x:x**2
+print(f(3))
