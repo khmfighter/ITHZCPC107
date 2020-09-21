@@ -5,14 +5,14 @@ game_player01="孙悟空"
 game_player02="猪八戒"
 game_player03="唐僧"
 import random    #先导入随机数
-class game():         #创建一个游戏的类 里面分为两个属性一个玩家名 一个电脑名
+class Game():         #创建一个游戏的类 里面分为两个属性一个玩家名 一个电脑名
     def __init__(self,playername,computername):
         self.playername=playername
         self.computername=computername
         self.playerscore=0    #玩家得分
         self.comscore=0       #电脑得分
         self.sum=0            #平局数
-    def startgame(self):
+    def startGame(self):
         print("-------猜拳游戏开始---------")
         print("游戏规则为：1.剪刀，2.石头，3.布")
         newname=input("英雄请输入你的姓名：")
@@ -62,5 +62,5 @@ class game():         #创建一个游戏的类 里面分为两个属性一个�
         print("%d次平局" % self.sum)
 
 
-lx=game("khm","computer") #传入的参数数量必须和定义参数的数量相等
-lx.startgame()      #调用游戏开始的方法
+lx=Game("khm","computer") #传入的参数数量必须和定义参数的数量相等
+lx.startGame()      #调用游戏开始的方法
