@@ -84,6 +84,7 @@ class Single_Linked:
 
     # （7）查询指定元素是否存在
     def search(self, item):
+        """链表查找节点是否存在，并返回True或者False"""
         cur = self.header
         while cur != None:
             if cur.item==item:
@@ -93,7 +94,26 @@ class Single_Linked:
 
     # （8）删除指定元素
     def delete(self,item):
-        pass
+        """删除节点"""
+        cur = self.header
+        pre = None
+        while cur != None:
+            # 找到了指定元素
+            if cur.item == item:
+                # 如果第一个就是删除的节点
+                if not pre:
+                    # 将头指针指向头节点的后一个节点
+                    self.header = cur.next
+                else:
+                    # 将删除位置前一个节点的next指向删除位置的后一个节点
+                    pre.next = cur.next
+                break
+            else:
+                # 继续按链表后移节点
+                pre = cur
+                cur = cur.next
+
+
 if __name__=="__main__":
     s=Single_Linked()
     print(s.isEmpty())
@@ -105,9 +125,16 @@ if __name__=="__main__":
     s.append("b")
     #中间添加
     s.insert(3,'张三')
+    print('++++++++++')
     #遍历
     s.travel()
+    print('++++++++++')
     #查询
     print(s.search("d"))
+    #删除节点
+    s.delete(5)
+    print('++++++++++')
+    # 遍历
+    s.travel()
+    print('++++++++++')
     print("长度为：",s.length())
-
